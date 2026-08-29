@@ -1,1 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Become a Mentor — Boyzclub</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main class="form-page">
+  <a class="toplink" href="../">← Back to Boyzclub</a>
 
+  <section class="card">
+    <p class="eyebrow">BOYZCLUB MENTORSHIP</p>
+    <h1>Become a mentor</h1>
+    <p class="lead">
+      Boyzclub mentors are positive adult role models who can offer practical guidance,
+      encouragement and perspective. Applications are reviewed before any matching takes place.
+    </p>
+
+    <form id="mentorForm">
+      <div class="two">
+        <label>
+          Full name
+          <input name="full_name" autocomplete="name" required>
+        </label>
+        <label>
+          Email address
+          <input name="email" type="email" autocomplete="email" required>
+        </label>
+      </div>
+
+      <div class="two">
+        <label>
+          Phone number
+          <input name="phone" type="tel" autocomplete="tel" required>
+        </label>
+        <label>
+          Area / city
+          <input name="area" placeholder="e.g. Johannesburg">
+        </label>
+      </div>
+
+      <div class="two">
+        <label>
+          Occupation / profession
+          <input name="occupation" placeholder="e.g. Engineer, Teacher, Entrepreneur">
+        </label>
+        <label>
+          Years of experience
+          <select name="experience_range">
+            <option value="">Select</option>
+            <option>0–2 years</option>
+            <option>3–5 years</option>
+            <option>6–10 years</option>
+            <option>11–20 years</option>
+            <option>20+ years</option>
+          </select>
+        </label>
+      </div>
+
+      <label>
+        Why would you like to mentor through Boyzclub?
+        <textarea name="motivation" required placeholder="Tell us what motivates you to support boys and young men."></textarea>
+      </label>
+
+      <label>
+        Areas where you can offer support
+        <textarea name="support_areas" placeholder="For example: school, careers, entrepreneurship, sport, confidence, leadership, technology or life skills."></textarea>
+      </label>
+
+      <label>
+        Previous experience working with or supporting young people
+        <textarea name="youth_experience" placeholder="This can include parenting, coaching, teaching, community work, volunteering or mentoring."></textarea>
+      </label>
+
+      <label class="check">
+        <input name="consent_screening" type="checkbox" required>
+        <span>I understand that mentor participation is subject to Boyzclub's safeguarding and suitability screening process.</span>
+      </label>
+
+      <label class="check">
+        <input name="consent_terms" type="checkbox" required>
+        <span>I agree to follow Boyzclub's mentor boundaries, safeguarding expectations and programme rules if approved.</span>
+      </label>
+
+      <button class="btn primary" type="submit" data-label="Submit mentor application">Submit mentor application</button>
+      <p class="status" hidden aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+
+<script src="../form.js"></script>
+<script>
+document.getElementById('mentorForm').addEventListener('submit', e =>
+  submitForm(e, 'mentor_applications', {
+    full_name: 'full_name',
+    email: 'email',
+    phone: 'phone',
+    area: 'area',
+    occupation: 'occupation',
+    experience_range: 'experience_range',
+    motivation: 'motivation',
+    support_areas: 'support_areas',
+    youth_experience: 'youth_experience',
+    consent_screening: 'consent_screening',
+    consent_terms: 'consent_terms'
+  })
+);
+</script>
+</body>
+</html>
